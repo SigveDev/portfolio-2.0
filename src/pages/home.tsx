@@ -1,39 +1,83 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Background from "../assets/windowsBG.jpg";
 
 import Navbar from "../components/navbar";
 
 import Personal from "../components/windows/personal";
+import Projects from "../components/windows/projects";
 
 const Home = () => {
-  const [activeWindow, setActiveWindow] = useState<string>("personal");
-  const [openWindows, setOpenWindows] = useState<string[]>(["personal"]);
+  const [activeWindows, setActiveWindows] = useState<string[]>([
+    "projects",
+    "personal",
+  ]);
 
   const openWindow = (window: string) => {
-    if (activeWindow === window) {
-      setActiveWindow("");
-      setOpenWindows(openWindows.filter((openWindow) => openWindow !== window));
-      return;
+    if (activeWindows.includes(window)) {
+      if (activeWindows.indexOf(window) === activeWindows.length - 1) {
+        setActiveWindows(
+          activeWindows.filter((activeWindows) => activeWindows !== window)
+        );
+        return;
+      } else {
+        const updatedWindows = [...activeWindows];
+        const index = updatedWindows.indexOf(window);
+        updatedWindows.splice(index, 1);
+        updatedWindows.push(window);
+        setActiveWindows(updatedWindows);
+        return;
+      }
     }
 
-    setActiveWindow(window);
-    if (!openWindows.includes(window)) {
-      setOpenWindows([...openWindows, window]);
-    }
+    setActiveWindows((prev) => [...prev, window]);
   };
 
   const closeWindow = (window: string) => {
-    setActiveWindow("");
-    setOpenWindows(openWindows.filter((openWindow) => openWindow !== window));
+    console.log(window);
+    if (!activeWindows.includes(window)) return;
+
+    if (activeWindows.length <= 1) {
+      setActiveWindows([]);
+    } else {
+      setActiveWindows(
+        activeWindows.filter((activeWindows) => activeWindows !== window)
+      );
+    }
+  };
+
+  const setFocus = (window: string) => {
+    if (activeWindows.includes(window)) {
+      const updatedWindows = [...activeWindows];
+      const index = updatedWindows.indexOf(window);
+      updatedWindows.splice(index, 1);
+      updatedWindows.push(window);
+      setActiveWindows(updatedWindows);
+    }
   };
 
   return (
     <div className="w-dvw h-dvh relative">
-      {openWindows.includes("personal") && (
-        <Personal closeWindow={closeWindow} />
-      )}
+      <div className="w-full h-[calc(100dvh_-_3rem)]">
+        {activeWindows.includes("personal") && (
+          <Personal
+            closeWindow={closeWindow}
+            setFocus={setFocus}
+            zIndex={activeWindows.indexOf("personal")}
+          />
+        )}
+        {activeWindows.includes("projects") && (
+          <Projects
+            closeWindow={closeWindow}
+            setFocus={setFocus}
+            zIndex={activeWindows.indexOf("projects")}
+          />
+        )}
+      </div>
 
-      <Navbar openWindow={openWindow} activeWindow={activeWindow} />
+      <Navbar
+        openWindow={openWindow}
+        activeWindow={activeWindows[activeWindows.length - 1]}
+      />
       <img
         src={Background}
         alt="Windows Background"

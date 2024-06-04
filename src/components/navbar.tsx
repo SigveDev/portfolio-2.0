@@ -34,24 +34,28 @@ const Navbar = ({
       </button>
       <div className="w-fit flex flex-row items-center gap-2 ml-2">
         <button
-          className={`flex justify-center rounded-md items-center w-fit h-[85%] px-1 bg-transparent border-none ${
-            activeWindow === "personal" && "bg-[#3286f4]"
+          className={`flex justify-center rounded-md items-center w-fit h-[85%] px-1 border-none ${
+            activeWindow === "personal"
+              ? "bg-activeNavElement"
+              : "bg-transparent"
           }`}
           onClick={() => openWindow("personal")}
         >
           <img src={Personal} alt="Personal" className="w-8 h-8" />
         </button>
         <button
-          className={`flex justify-center rounded-md items-center w-fit h-[85%] px-1 bg-transparent border-none ${
-            activeWindow === "project" && "bg-[#3286f4]"
+          className={`flex justify-center rounded-md items-center w-fit h-[85%] px-1 border-none ${
+            activeWindow === "projects"
+              ? "bg-activeNavElement"
+              : "bg-transparent"
           }`}
-          onClick={() => openWindow("project")}
+          onClick={() => openWindow("projects")}
         >
           <img src={Projects} alt="Projects" className="w-8 h-8" />
         </button>
         <button
-          className={`flex justify-center rounded-md items-center w-fit h-[85%] px-1 bg-transparent border-none ${
-            activeWindow === "skills" && "bg-[#3286f4]"
+          className={`flex justify-center rounded-md items-center w-fit h-[85%] px-1 border-none ${
+            activeWindow === "skills" ? "bg-activeNavElement" : "bg-transparent"
           }`}
           onClick={() => openWindow("skills")}
         >

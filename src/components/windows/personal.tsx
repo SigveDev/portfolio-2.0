@@ -7,8 +7,12 @@ import Me from "../../assets/me.jpg";
 
 const Personal = ({
   closeWindow,
+  setFocus,
+  zIndex,
 }: {
   closeWindow: (window: string) => void;
+  setFocus: (window: string) => void;
+  zIndex: number;
 }) => {
   return (
     <Draggable
@@ -20,7 +24,11 @@ const Personal = ({
         y: (window.innerHeight / 10) * 2,
       }}
     >
-      <div className="w-[40%] h-[50%] flex flex-col items-center justify-center">
+      <div
+        className={`w-[40%] h-[50%] flex flex-col items-center justify-center absolute`}
+        style={{ zIndex: zIndex * 10 }}
+        onClick={() => setFocus("personal")}
+      >
         <div className="handle cursor-grab flex items-center px-1 w-full h-8 bg-gradient-to-b from-[#3887e8] via-[#2768dc] via-10% to-[#245edb] to-90% rounded-t-md">
           <div className="flex flex-row items-center">
             <img src={PersonalIcon} alt="Personal" className="w-6 h-6" />
