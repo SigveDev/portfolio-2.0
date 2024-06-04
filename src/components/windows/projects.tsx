@@ -58,12 +58,12 @@ const Projects = ({
               <h5 className="font-semibold text-lg">HC Auth</h5>
               <p>
                 HC Auth was my take on an OAuth alternative where you could have
-                one senteral login to use on different websites. The website has
-                an dashboard where you could register your own apps to integrate
-                the auth into and list up all pages you have logged into with HC
-                Auth. You can set a custom avatar and change your name, email
-                and password and all teh changes will take effect on the
-                websites you have logged into asap.
+                one central login to use on different websites. The website has
+                a dashboard where you could register your own apps to integrate
+                the auth into and list all the pages you have logged into with
+                HC Auth. You can set a custom avatar and change your name,
+                email, and password, and all the changes will take effect on the
+                websites you have logged into immediately.
               </p>
               <a href="https://auth-dev.hcklikk.com" className="underline">
                 https://auth-dev.hcklikk.com
@@ -77,12 +77,12 @@ const Projects = ({
             <div className="col-span-3 flex flex-col">
               <h5 className="font-semibold text-lg">HC Hub</h5>
               <p>
-                HC Hub is an youtube clone where you can watch videos people
-                have uploaded. The only form of authentication teh page currenty
-                supports is HC Auth and it gets th user's pfp and info from an
-                api that talks to the same backend that HC Auth uses after the
-                user has authorized for the first time. The page is make with
-                Vite, Tailwind CSS and ShadCn.
+                HC Hub is a YouTube clone where you can watch videos people have
+                uploaded. The only form of authentication the page currently
+                supports is HC Auth, and it gets the user's profile picture and
+                info from an API that communicates with the same backend that HC
+                Auth uses after the user has authorized for the first time. The
+                page is made with Vite, Tailwind CSS, and ShadCn.
               </p>
               <a href="https://hub.hcklikk.com" className="underline">
                 https://hub.hcklikk.com
@@ -96,8 +96,8 @@ const Projects = ({
             <div className="col-span-3 flex flex-col">
               <h5 className="font-semibold text-lg">Teams AI</h5>
               <p>
-                Teams AI as a page made to look like Microsoft Teams where you
-                can chat with an AI based on GPT-4o with some custom
+                Teams AI is a page made to look like Microsoft Teams where you
+                can chat with an AI based on GPT-4 with some custom
                 pre-configuration so its name is "Ola Nordmann".
               </p>
               <a href="https://teams.sigve.dev" className="underline">
@@ -112,13 +112,13 @@ const Projects = ({
             <div className="col-span-3 flex flex-col">
               <h5 className="font-semibold text-lg">HC Comics</h5>
               <p>
-                HC Comics is a page Where you can read comics me and my friends
+                HC Comics is a page where you can read comics my friends and I
                 create and post. This page is made with Vite and Tailwind CSS.
                 The whole page will react to the latest posted comic and change
                 colors to match.
                 <br />
-                This page does also use HC Auth for authentication, but it also
-                does have its own authentication.
+                This page also uses HC Auth for authentication, but it also has
+                its own authentication.
               </p>
               <p className="underline">WIP</p>
             </div>
