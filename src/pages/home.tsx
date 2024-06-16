@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Background from "../assets/windowsBG.jpg";
 
 import Navbar from "../components/navbar";
@@ -33,7 +33,8 @@ const Home = () => {
   };
 
   const closeWindow = (window: string) => {
-    console.log(window);
+    console.log("close:" + window);
+    console.log(activeWindows.length);
     if (!activeWindows.includes(window)) return;
 
     if (activeWindows.length <= 1) {
@@ -45,13 +46,18 @@ const Home = () => {
     }
   };
 
-  const setFocus = (window: string) => {
-    if (activeWindows.includes(window)) {
-      const updatedWindows = [...activeWindows];
-      const index = updatedWindows.indexOf(window);
-      updatedWindows.splice(index, 1);
-      updatedWindows.push(window);
-      setActiveWindows(updatedWindows);
+  const setFocus = (window: string, e: any) => {
+    if (e.target.name === "close") {
+      e.preventDefault();
+      e.stopPropagation();
+    } else {
+      if (activeWindows.includes(window)) {
+        const updatedWindows = [...activeWindows];
+        const index = updatedWindows.indexOf(window);
+        updatedWindows.splice(index, 1);
+        updatedWindows.push(window);
+        setActiveWindows(updatedWindows);
+      }
     }
   };
 

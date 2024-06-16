@@ -14,7 +14,7 @@ const Projects = ({
   zIndex,
 }: {
   closeWindow: (window: string) => void;
-  setFocus: (window: string) => void;
+  setFocus: (window: string, e: any) => void;
   zIndex: number;
 }) => {
   return (
@@ -30,7 +30,7 @@ const Projects = ({
       <div
         className={`w-[50%] h-[70%] flex flex-col items-center justify-center absolute`}
         style={{ zIndex: zIndex * 10 }}
-        onClick={() => setFocus("projects")}
+        onClick={(e) => setFocus("projects", e)}
       >
         <div className="handle cursor-grab flex items-center px-1 w-full h-8 bg-gradient-to-b from-[#3887e8] via-[#2768dc] via-10% to-[#245edb] to-90% rounded-t-md">
           <div className="flex flex-row items-center">
@@ -40,6 +40,7 @@ const Projects = ({
           <div className="grow flex flex-row items-center justify-end">
             <button
               className="bg-red-600 border-none rounded-sm flex justify-center items-center h-6 w-6"
+              name="close"
               onClick={() => closeWindow("projects")}
             >
               <img src={Close} alt="Close" className="w-4 h-4" />
