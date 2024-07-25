@@ -55,8 +55,9 @@ const Education = ({
             <div className="flex flex-col w-full h-full gap-1">
               <p className="font-semibold">2023 - 2025:</p>
               <p>
-                I am currently getting my certificate of apprenticeship at
-                Intility AS in Oslo, Norway. Where i am working as a developer.
+                I am currently obtaining my certificate of apprenticeship as a
+                developer at Intility AS in Oslo, Norway, where I work as a
+                technician and developer.
               </p>
             </div>
             <div className="flex flex-col w-full h-full gap-1">

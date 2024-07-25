@@ -7,6 +7,7 @@ import Project1 from "../../assets/prod1.png";
 import Project2 from "../../assets/prod2.png";
 import Project3 from "../../assets/prod3.png";
 import Project4 from "../../assets/prod4.png";
+import Project5 from "../../assets/prod5.png";
 
 const Projects = ({
   closeWindow,
@@ -129,6 +130,27 @@ const Projects = ({
                 its own authentication.
               </p>
               <p className="underline">WIP</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-5 gap-2">
+            <div className="flex items-center justify-center w-full col-span-2">
+              <img src={Project5} alt="Project 5" className="w-full" />
+            </div>
+            <div className="flex flex-col col-span-3">
+              <h5 className="text-lg font-semibold">PixieAI</h5>
+              <p>
+                PixieAI is an app that uses Spotify songs and data to play and
+                recommend music, allowing users to listen to their saved songs
+                like it's a radio station. By leveraging the latest in AI
+                technology, PixieAI uses OpenAI's ChatGPT-4 to generate engaging
+                scripts and OpenAI's Text-to-Speech (TTS) to create realistic
+                audio files. This feature provides interesting information about
+                each song before it plays, with song names and data sourced
+                directly from Spotify.
+              </p>
+              <a href="https://pixie.sigve.dev" className="underline">
+                https://pixie.sigve.dev
+              </a>
             </div>
           </div>
         </div>

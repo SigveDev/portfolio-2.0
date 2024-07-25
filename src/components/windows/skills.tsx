@@ -73,6 +73,10 @@ const Skills = ({
               <p>MongoDB:</p>
               <LoadingBar value={70} />
             </div>
+            <div className="flex flex-col w-full gap-1 h-fit">
+              <p>AI integration:</p>
+              <LoadingBar value={50} />
+            </div>
           </div>
         </div>
       </div>
