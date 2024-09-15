@@ -60,8 +60,8 @@ const Personal = ({
               <h1 className="text-2xl font-bold">Sigve Tomten</h1>
               <p className="font-semibold">About me:</p>
               <p>
-                I am a 18 year old developer from Norway. I have been coding for
-                about 4 years now and I am currently working at Intility AS.
+                I am a 19 year old developer from Norway. I have been coding for
+                about 5 years now and I am currently working at Intility AS.
               </p>
             </div>
           </div>
